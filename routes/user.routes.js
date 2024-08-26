@@ -1,6 +1,11 @@
 const { Router } = require('express');
 const { check, param } = require('express-validator');
-const { createUserController, getUsersController, getUserByIdController, deleteUserController } = require('../controllers/user.controller');
+const { createUserController,
+        getUsersController,
+        getUserByIdController,
+        deleteUserController,
+        updateUserController } = require('../controllers/user.controller');
+        
 const validateFields = require('../middelware/validate-field');
 
 const router = Router();
@@ -36,6 +41,17 @@ router.delete(
         validateFields
     ],
     deleteUserController
+);
+
+router.patch(
+    '/:id',
+    [
+        param('id').isMongoId().withMessage('ID de Usuario no válido'),
+        check('username').optional().isString().isLength({ max: 50 }).withMessage('Username no puede exceder los 50 caracteres'),
+        check('email').optional().isEmail().withMessage('Email no válido').isLength({ max: 100 }).withMessage('Email no puede exceder los 100 caracteres'),
+        validateFields
+    ],
+    updateUserController
 );
 
 module.exports = router;

@@ -14,8 +14,21 @@ const getCropById = async (id) => {
   return await Crop.findById(id);
 };
 
+const getAllCrops = async () => {
+  return await Crop.find({}).populate('userId', 'username email name'); // Opcional: Popula los datos del usuario relacionado
+};
+
 const deleteCrop = async (id) => {
   return await Crop.findByIdAndDelete(id);
+};
+
+const updateCropName = async (cropId, newName) => {
+  const crop = await Crop.findByIdAndUpdate(
+    cropId, 
+    { name: newName, updatedAt: Date.now() }, 
+    { new: true, runValidators: true }
+  );
+  return crop;
 };
 
 module.exports = {
@@ -23,4 +36,6 @@ module.exports = {
   getCropsByUser,
   getCropById,
   deleteCrop,
+  updateCropName,
+  getAllCrops
 };

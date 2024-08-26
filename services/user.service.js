@@ -22,9 +22,21 @@ const deleteUser = async (id) => {
     return await User.findByIdAndDelete(id);
 };
 
+const updateUser = async (id, userData) => {
+    const updatedUser = await User.findByIdAndUpdate(id, userData, {
+        new: true,           
+        runValidators: true, 
+    }).select('username email'); 
+    return updatedUser;
+};
+
+module.exports = { updateUser };
+
+
 module.exports = {
     createUser,
     getUsers,
     getUserById,
     deleteUser,
+    updateUser
 };
