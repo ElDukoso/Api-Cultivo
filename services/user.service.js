@@ -14,7 +14,7 @@ const getUsers = async () => {
 
 // Obtener un usuario por ID
 const getUserById = async (id) => {
-    return await User.findById(id);
+    return await User.findById(id, 'username email');
 };
 
 // Eliminar un usuario por ID

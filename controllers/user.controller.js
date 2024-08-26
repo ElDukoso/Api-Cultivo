@@ -1,5 +1,5 @@
 const { response } = require('express');
-const { createUser, getUsers, getUserById, deleteUser } = require('../services/user.services');
+const { createUser, getUsers, getUserById, deleteUser } = require('../services/user.service');
 
 // Crear un usuario
 const createUserController = async (req, res = response) => {
