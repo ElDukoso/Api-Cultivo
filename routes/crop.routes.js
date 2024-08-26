@@ -17,13 +17,15 @@ const router = Router();
 router.post(
     '/',
     [
-        check('userId').isMongoId().withMessage('El ID del usuario no es válido'),
-        check('name').not().isEmpty().withMessage('El nombre del cultivo es requerido').isLength({ max: 100 }),
-        check('plantingDate').isDate().withMessage('La fecha de siembra es requerida'),
-        validateFields,
+      check('userId').isMongoId().withMessage('El ID del usuario no es válido'),
+      check('name').not().isEmpty().withMessage('El nombre del cultivo es requerido').isLength({ max: 100 }),
+      check('productId').not().isEmpty().withMessage('El ID del producto es requerido'),
+      check('plantingDate').isDate().withMessage('La fecha de siembra es requerida'),
+      validateFields
     ],
     createCropController
-);
+  );
+  
 
 // Ruta para obtener todos los cultivos de un usuario
 router.get('/user/:userId', [

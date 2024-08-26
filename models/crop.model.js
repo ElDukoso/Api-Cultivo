@@ -11,6 +11,11 @@ const CropSchema = new Schema({
     required: true,
     maxlength: 100,
   },
+  productId: {
+    type: String,  // O puedes usar Number si prefieres un ID numérico
+    required: true,
+    unique: true,  // Asegura que el ID de producto sea único en la colección
+  },
   plantingDate: {
     type: Date,
     required: true,
