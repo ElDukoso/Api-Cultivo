@@ -59,7 +59,7 @@ const deleteUserController = async (req, res = response) => {
         if (!user) {
             return res.status(404).json({
                 ok: false,
-                msg: 'Usurio no encontrado'
+                msg: 'Usuario no encontrado'
             });
         }
         res.status(200).json({
