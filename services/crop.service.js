@@ -1,5 +1,4 @@
 const Crop = require('../models/crop.model');
-const User = require('../models/user.model');
 const Kit = require('../models/kit.model');
 
 const createCrop = async (cropData) => {

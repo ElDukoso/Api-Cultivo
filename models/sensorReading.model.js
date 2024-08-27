@@ -2,12 +2,12 @@ const { Schema, model } = require('mongoose');
 
 const SensorReadingSchema = new Schema({
   cropId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'Crop',
     required: true,
   },
   sensorId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'Sensor',
     required: true,
   },

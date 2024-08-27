@@ -20,7 +20,6 @@ router.post(
     check('userId').isString().withMessage('El ID del usuario debe ser una cadena de texto'),
     check('name').not().isEmpty().withMessage('El nombre del cultivo es requerido').isLength({ max: 100 }),
     check('productId').not().isEmpty().withMessage('El ID del producto es requerido'),
-    check('plantingDate').isDate().withMessage('La fecha de siembra es requerida'),
     validateFields
   ],
   createCropController

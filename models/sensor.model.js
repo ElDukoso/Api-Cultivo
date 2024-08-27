@@ -2,14 +2,14 @@ const { Schema, model } = require('mongoose');
 
 const SensorSchema = new Schema({
   cropId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'Crop',
     required: true,
   },
   type: {
     type: String,
     required: true,
-    enum: ['humidity', 'temperature', 'water', 'light', 'pH'],
+    enum: ['humidity', 'temperature', 'water'],
     maxlength: 50,
   },
   unit: {

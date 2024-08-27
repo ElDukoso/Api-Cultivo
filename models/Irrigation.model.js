@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const IrrigationSchema = new Schema({
   cropId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'Crop',
     required: true,
   },
