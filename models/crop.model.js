@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const CropSchema = new Schema({
   userId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'User',
     required: true,
   },
@@ -12,9 +12,9 @@ const CropSchema = new Schema({
     maxlength: 100,
   },
   productId: {
-    type: String,  // O puedes usar Number si prefieres un ID numérico
+    type: String,  
     required: true,
-    unique: true,  // Asegura que el ID de producto sea único en la colección
+    unique: true,  
   },
   plantingDate: {
     type: Date,

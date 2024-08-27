@@ -78,7 +78,7 @@ const updateKitController = async (req, res = response) => {
         msg: 'Error al actualizar el kit'
       });
     }
-  };
+};
 
 const deleteKitController = async (req, res) => {
     try {

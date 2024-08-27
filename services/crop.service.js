@@ -1,4 +1,5 @@
 const Crop = require('../models/crop.model');
+const User = require('../models/user.model');
 const Kit = require('../models/kit.model');
 
 const createCrop = async (cropData) => {
@@ -28,7 +29,8 @@ const getCropById = async (id) => {
 };
 
 const getAllCrops = async () => {
-  return await Crop.find({}).populate('userId', 'username email name'); // Opcional: Popula los datos del usuario relacionado
+  const crops = await Crop.find({});
+  return crops;  // Retorna los cultivos sin datos de usuario
 };
 
 const deleteCrop = async (id) => {

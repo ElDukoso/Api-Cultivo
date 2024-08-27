@@ -1,5 +1,5 @@
 const { response } = require('express');
-const { createCrop, getCropsByUser, getCropById, deleteCrop, updateCropName, getAllCropsq } = require('../services/crop.service');
+const { createCrop, getCropsByUser, getCropById, deleteCrop, updateCropName, getAllCrops } = require('../services/crop.service');
 
 // Crear un cultivo
 const createCropController = async (req, res = response) => {

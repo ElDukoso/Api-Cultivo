@@ -17,4 +17,3 @@ const KitSchema = new Schema({
   });
   
   module.exports = model('Kit', KitSchema);
-  
