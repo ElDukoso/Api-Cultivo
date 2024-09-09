@@ -1,4 +1,4 @@
-const Parameter = require('../models/Parameter');
+const Parameter = require('../models/parameter.model');
 
 // Crear un nuevo parámetro
 const createParameter = async (data) => {

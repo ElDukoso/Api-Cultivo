@@ -8,7 +8,7 @@ const {
   deleteParameterController
 } = require('../controllers/parameter.controller');
 
-const validateFields = require('../middleware/validate-field');
+const validateFields = require('../middelware/validate-field');
 
 const router = Router();
 
