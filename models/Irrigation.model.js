@@ -3,8 +3,7 @@ const { Schema, model } = require('mongoose');
 const IrrigationSchema = new Schema({
   cropId: {
     type: String,
-    ref: 'Crop',
-    required: true,
+    required: true
   },
   volume: {
     type: Number,
@@ -13,7 +12,7 @@ const IrrigationSchema = new Schema({
   timestamp: {
     type: Date,
     default: Date.now,
-    required: true,
+    required: true
   },
 });
 

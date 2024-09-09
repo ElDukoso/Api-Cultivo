@@ -14,24 +14,24 @@ const CropSchema = new Schema({
   productId: {
     type: String,  
     required: true,
-    unique: true,  
+    unique: true
   },
   plantingDate: {
     type: Date,
-    default: Date.now,
+    default: Date.now
   },
   location: {
     type: String,
-    maxlength: 255,
+    maxlength: 255
   },
   createdAt: {
     type: Date,
-    default: Date.now,
+    default: Date.now
   },
   updatedAt: {
     type: Date,
-    default: Date.now,
-  },
+    default: Date.now
+  }
 });
 
 module.exports = model('Crop', CropSchema);

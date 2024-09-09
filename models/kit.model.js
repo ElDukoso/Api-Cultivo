@@ -4,15 +4,15 @@ const KitSchema = new Schema({
     productId: {
       type: String,
       required: true,
-      unique: true,
+      unique: true
     },
     name: {
       type: String,
-      required: true,
+      required: true
     },
     available: {
       type: Boolean,
-      default: true,
+      default: true
     },
   });
   

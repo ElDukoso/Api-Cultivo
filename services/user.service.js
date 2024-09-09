@@ -30,9 +30,6 @@ const updateUser = async (id, userData) => {
     return updatedUser;
 };
 
-module.exports = { updateUser };
-
-
 module.exports = {
     createUser,
     getUsers,

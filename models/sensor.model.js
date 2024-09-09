@@ -4,7 +4,7 @@ const SensorSchema = new Schema({
   cropId: {
     type: String,
     ref: 'Crop',
-    required: true,
+    required: true
   },
   type: {
     type: String,
@@ -15,16 +15,16 @@ const SensorSchema = new Schema({
   unit: {
     type: String,
     required: true,
-    maxlength: 20,
+    maxlength: 20
   },
   createdAt: {
     type: Date,
-    default: Date.now,
+    default: Date.now
   },
   updatedAt: {
     type: Date,
-    default: Date.now,
-  },
+    default: Date.now
+  }
 });
 
 module.exports = model('Sensor', SensorSchema);
