@@ -15,6 +15,8 @@ app.use('/api/crops', require('./routes/crop.routes'));
 app.use('/api/kits', require('./routes/kit.routes'));
 app.use('/api/parameters', require('./routes/parameter.routes'));
 app.use('/api/sensor', require('./routes/sensor.routes'));
+app.use('/api/sensorReading', require('./routes/sensorReading.routes'));
+
 
 
 app.listen(process.env.PORT, () => {

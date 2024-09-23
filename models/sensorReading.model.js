@@ -17,7 +17,7 @@ const SensorReadingSchema = new Schema({
     type: Date,
     default: Date.now,
     required: true
-  },
+  }
 });
 
 module.exports = model('SensorReading', SensorReadingSchema);
