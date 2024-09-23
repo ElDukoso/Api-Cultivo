@@ -14,6 +14,8 @@ app.use('/api/users', require('./routes/user.routes'));
 app.use('/api/crops', require('./routes/crop.routes'));
 app.use('/api/kits', require('./routes/kit.routes'));
 app.use('/api/parameters', require('./routes/parameter.routes'));
+app.use('/api/sensor', require('./routes/sensor.routes'));
+
 
 app.listen(process.env.PORT, () => {
     console.log('El servidor esta corriendo en el puerto ' + process.env.PORT)

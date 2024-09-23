@@ -1,5 +1,6 @@
 const { response } = require('express');
 const { createUser, getUsers, getUserById, deleteUser, updateUser } = require('../services/user.service');
+const { loginUser } = require('../services/auth.service');
 
 // Crear un usuario
 const createUserController = async (req, res = response) => {
@@ -98,10 +99,29 @@ const updateUserController = async (req, res) => {
     }
 };
 
+// Login de usuario
+const loginUserController = async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        const token = await loginUser(email, password);
+        res.status(200).json({
+            ok: true,
+            token,
+        });
+    } catch (error) {
+        res.status(400).json({
+            ok: false,
+            msg: error.message,
+        });
+    }
+};
+
 module.exports = {
     createUserController,
     getUsersController,
     getUserByIdController,
     deleteUserController,
-    updateUserController
+    updateUserController,
+    loginUserController
 };

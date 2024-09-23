@@ -9,7 +9,7 @@ const SensorSchema = new Schema({
   type: {
     type: String,
     required: true,
-    enum: ['humidity', 'temperature', 'water'],
+    enum: ['humidity', 'temperature'],
     maxlength: 50,
   },
   unit: {
